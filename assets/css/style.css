@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: url('../img/background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+#logo {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+#solarSystem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
