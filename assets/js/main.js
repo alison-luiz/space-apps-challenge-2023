@@ -1,5 +1,6 @@
 import * as THREE from './three.module.js';
 import { OrbitControls } from './controls/OrbitControls.js';
+import { TextureLoader } from './three.module.js';
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -8,13 +9,16 @@ var renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('solarSystem').appendChild(renderer.domElement);
 
+var textureLoader = new TextureLoader();
+var sunTexture = textureLoader.load("assets/img/sun-texture.jpg");
+
 var geometry = new THREE.SphereGeometry(1, 32, 32);
 var material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-var sun = new THREE.Mesh(geometry, material);
+var sun = new THREE.Mesh(new THREE.SphereGeometry(5, 32, 32), new THREE.MeshBasicMaterial({ map: sunTexture }));
 scene.add(sun);
 
-camera.position.y = 50;
-camera.position.z = 50;
+camera.position.y = 30;
+camera.position.z = 0;
 camera.position.x = 50;
 camera.lookAt(scene.position);
 
