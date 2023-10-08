@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sun System - Sun</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="assets/img/logo.ico" type="image/x-icon" />
+    <!-- Importar Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Importar a fonte Open Sans do Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        overflow-y: scroll;
+      }
+
+      .sun-image {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .info-panel {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        font-family: "Open Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src="../assets/img/logo.ico" alt="Logo" class="mb-3" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="info-panel">
+            <h1 class="text-center">Sun</h1>
+            <p>Information...</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <img
+            src="../assets/img/planets/sun.png"
+            alt="Sun"
+            class="sun-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <button class="btn btn-primary" onclick="goBack()">Back to Home</button>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      function goBack() {
+        window.location.href = "../index.html";
+      }
+    </script>
+  </body>
+</html>

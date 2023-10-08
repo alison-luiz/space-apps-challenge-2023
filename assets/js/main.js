@@ -36,6 +36,11 @@ var planetData = [
 
 var planets = [];
 
+function redirectToPlanetPage(planetName) {
+  const planetPageURL = `planets/${planetName}.html`;
+  window.location.href = planetPageURL;
+}
+
 planetData.forEach(data => {
   var geometry = new THREE.SphereGeometry(data.size, 32, 32);
   var material = new THREE.MeshBasicMaterial({ color: data.color });
@@ -66,12 +71,35 @@ planetData.forEach(data => {
 
   scene.add(sprite);
 
+  planet.userData = { planetName: data.name };
+
   planets.push({
     mesh: planet,
     distance: data.distance,
     speed: data.speed,
     label: sprite
   });
+});
+
+document.addEventListener('click', (event) => {
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
+
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+
+  const intersects = raycaster.intersectObjects(scene.children);
+
+  if (intersects.length > 0) {
+    const object = intersects[0].object;
+    
+    if (object.userData && object.userData.planetName) {
+      const planetName = object.userData.planetName;
+      redirectToPlanetPage(planetName);
+    }
+  }
 });
 
 var controls = new OrbitControls(camera, renderer.domElement);
