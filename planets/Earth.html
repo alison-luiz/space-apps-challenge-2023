@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sun System - Earth</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="assets/img/logo.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        overflow-y: scroll;
+      }
+
+      .earth-image {
+        max-width: 80%;
+        height: auto;
+      }
+
+      .info-panel {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      @media (max-width: 768px) {
+        .order-lg-1 {
+          order: 2;
+        }
+
+        .order-lg-2 {
+          order: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src="../assets/img/logo.ico" alt="Logo" class="mb-3" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center order-lg-1 d-flex align-items-center">
+          <div class="info-panel mx-auto">
+            <h1 class="text-center">Earth</h1>
+            <p>Information about the Earth goes here...</p>
+          </div>
+        </div>
+        <div class="col-md-6 text-center order-lg-2">
+          <img
+            src="../assets/img/planets/Earth.png"
+            alt="Earth"
+            class="earth-image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <button class="btn btn-primary" onclick="goBack()">Back to Home</button>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      function goBack() {
+        window.location.href = "../index.html";
+      }
+    </script>
+  </body>
+</html>
